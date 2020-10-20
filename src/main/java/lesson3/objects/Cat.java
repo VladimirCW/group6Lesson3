@@ -1,19 +1,52 @@
 package main.java.lesson3.objects;
 
-public class Cat {
+import main.java.lesson3.objects.Animal;
+
+public class Cat extends Animal {
+    static int counter = 0;
     String name = "Barsik";
-    String surname = "Cotovich";
-    int age = 20;
+    //String surname = "Cotovich";
+    String surname = new String("Cotovich");
+    private int age = 20;
 
     public Cat(String name) {
+        this.protectedMethod();
+        counter++;
         this.name = name;
         System.out.println("********** new cat was created ***********");
     }
 
     public Cat(String name, String surname) {
-        this.name = name;
+        this(name);
         this.surname = surname;
-        System.out.println("********** new cat was created ***********");
+    }
+
+    private boolean validateAge(int age) {
+        if(age > 0 && age <=20) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean equals(Cat animal) {
+        if(this.age == animal.age && this.name.equals(animal.name) && this.surname.equals(animal.surname)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void setAge(int age) {
+        if(this.validateAge(age)) {
+            this.age = age;
+        } else {
+            System.out.println("The age '" + age + "' is invalid!!!");
+        }
+    }
+
+    public int getAge() {
+        return this.age;
     }
 
 
@@ -38,11 +71,12 @@ public class Cat {
         for (int i = 0; i < amount; i++) System.out.printf("Hello '%s' !!! \n", userName);
     }
 
-    public void sleep() {
-        System.out.println("I am sleeping ....");
-    }
-
     public void meow() {
         System.out.println("MEOW ...");
+    }
+
+    static public int getCounter() {
+        System.out.println("Get counter");
+        return counter;
     }
 }
