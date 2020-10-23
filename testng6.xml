@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="FirstSuit">
+    <test name="FirstTest">
+        <classes>
+            <class name="test.java.lesson6.CatTests"/>
+            <class name="test.java.lesson6.CatTest2"/>
+            <class name="test.java.lesson6.CatDPTest"/>
+        </classes>
+    </test>
+</suite>
