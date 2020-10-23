@@ -1,17 +1,20 @@
 package test.java.lesson6;
 
 import main.java.lesson3.objects.Cat;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
 public class CatTests {
 
+    @Parameters({"ageToSet", "expectedAge"})
     @Test
-    public void setAgePositive() {
+    public void setAgePositive(/*@Optional("10")*/ int ageToSet, /*@Optional("10")*/ int expectedAge) {
         //Arange
-        int ageToSet = 10;
-        int expectedAge = 10;
+//        int ageToSet = 10;
+//        int expectedAge = 10;
         Cat cat = new Cat("Vova");
         //Act
         cat.setAge(ageToSet);
