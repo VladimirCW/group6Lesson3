@@ -6,5 +6,15 @@
             <class name="test.java.lesson6.CatTest2"/>
             <class name="test.java.lesson6.CatDPTest"/>
         </classes>
+        <!--<packages>
+            <package name="test.java.lesson6"/>
+        </packages>-->
+        <!--<classes>
+            <class name="test.java.lesson6.CatDPTest">
+                <methods>
+                    <include name="testTest"/>
+                </methods>
+            </class>
+        </classes>-->
     </test>
 </suite>

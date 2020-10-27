@@ -11,16 +11,16 @@ public class CatTests {
 
     @Parameters({"ageToSet", "expectedAge"})
     @Test
-    public void setAgePositive(/*@Optional("10")*/ int ageToSet, /*@Optional("10")*/ int expectedAge) {
+    public void setAgePositive(@Optional("10") String ageToSet, @Optional("10") String expectedAge) {
         //Arange
 //        int ageToSet = 10;
 //        int expectedAge = 10;
         Cat cat = new Cat("Vova");
         //Act
-        cat.setAge(ageToSet);
+        cat.setAge(Integer.parseInt(ageToSet));
         int actualAge = cat.getAge();
         //Assert
-        assertEquals(actualAge, expectedAge, String.format("Expected age to be %d, but actual was %d", expectedAge, actualAge));
+        assertEquals(actualAge, expectedAge, String.format("Expected age to be %d, but actual was %d", Integer.parseInt(expectedAge), actualAge));
 //        assertTrue(actualAge == 1000,
 //                String.format("Expected age to be %d, but actual was %d", 1000, actualAge));
     }
