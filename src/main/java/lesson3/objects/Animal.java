@@ -1,7 +1,6 @@
 package main.java.lesson3.objects;
 
-public class Animal {
-
+public abstract class Animal implements IMovable, IEatable{
 
     protected void protectedMethod() {
         System.out.println("I am protected method!!!");

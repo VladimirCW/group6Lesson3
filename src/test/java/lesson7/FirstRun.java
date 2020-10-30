@@ -30,7 +30,7 @@ public class FirstRun {
 
         driver.get("https://www.amazon.com/");
 
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
         /*By byBestSeller = By.id("someId");
         By byBestSeller = By.cssSelector("div[id='someId']");
