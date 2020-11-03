@@ -48,7 +48,7 @@ public class FirstRun {
 
         System.out.println("TITLE IS: " + titleString);
 
-        driver.close();
+        //driver.close();
         //driver.quit();
     }
 }

@@ -1,0 +1,9 @@
+homePage.open()
+        .setSearch("iPhone")
+        .setSearchNegative("")
+        .search()
+goodsPage.openProduct(2);
+        .clickBy();
+String actualColor = goodsPage.getBorderColor();
+
+assertEquals(10, 10);
