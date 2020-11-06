@@ -2,8 +2,11 @@ package test.java.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class GiftPage {
     WebDriver driver;
@@ -37,5 +40,15 @@ public class GiftPage {
                 d -> d.findElements(giftsBy).size() > 1
         ));
         return this;
+    }
+
+    public List<WebElement> getCartsList() {
+        return driver.findElements(By.xpath("//div[@data-component-type='s-search-result']"));
+    }
+
+    public int getMaximumCartPrice(WebElement cart) {
+        List<WebElement> pricesList = cart.findElements(By.className("a-price-whole"));
+        String actualMaximumPriceAsString = pricesList.get(pricesList.size() - 1).getText().replace(",", "");
+        return Integer.parseInt(actualMaximumPriceAsString);
     }
 }

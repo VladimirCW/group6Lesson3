@@ -19,7 +19,7 @@ public class HomePage {
 
     public HomePage open() {
         driver.get("https://www.amazon.com/");
-        wait.until(d -> d.findElements(By.xpath("//div[@id='nav-xshop']/a")).size() > 6);
+        wait.until(d -> d.findElements(By.xpath("//div[@id='nav-xshop']/a")).size() == 6);
         /*wait.until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply( WebDriver driver) {
