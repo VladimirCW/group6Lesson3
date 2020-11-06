@@ -31,6 +31,7 @@ public class PoTest extends TestBaseSetup {
                 .open()
                 .clickSellBtn()
                 .clickRegistryBtn()
+                .clickSellBtn()
                 .clickGiftCardsBtn();
         List<WebElement> cartsList =
                 giftPage
