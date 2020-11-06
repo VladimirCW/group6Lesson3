@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class GiftPage extends BasePage{
-    private Logger logger = LogManager.getLogger(HomePage.class);
+    private Logger logger = LogManager.getLogger(GiftPage.class);
     WebDriver driver;
     WebDriverWait wait;
     By selectedPriceResultBy = By.xpath("//span[contains(text(), 'results for')]/following-sibling::span[@class='a-color-state a-text-bold']");

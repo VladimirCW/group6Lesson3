@@ -4,8 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import test.java.utils.Screenshots;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +24,9 @@ public class TestBaseSetup {
     }
 
     @AfterMethod
-    public void finalizeBrowser() {
+    public void finalizeBrowser(ITestResult testResult) {
+        Screenshots screenshots = new Screenshots(driver);
+        screenshots.makeScreenshot(testResult);
         driver.quit();
     }
 }

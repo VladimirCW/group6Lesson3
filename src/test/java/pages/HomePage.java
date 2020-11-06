@@ -24,7 +24,16 @@ public class HomePage extends BasePage {
     public HomePage open() {
         logger.info("Open home page");
         logger.warn("WARNING !!!!!");
-        logger.error("ERROR !!!!!");
+        try{
+            System.out.println(1/0);
+        } catch (ArithmeticException error) {
+            logger.error("ARIPHMETIC ERROR !!!!!");
+        } catch (ArrayIndexOutOfBoundsException aiobe) {
+            logger.error("ARRAY ERROR !!!!!");
+        } catch (Exception e) {
+            logger.info("UNKNOWN ERROR");
+        }
+
         logger.fatal("ERROR !!!!!");
         driver.get("https://www.amazon.com/");
         wait.until(d -> d.findElements(By.xpath("//div[@id='nav-xshop']/a")).size() == 6);
