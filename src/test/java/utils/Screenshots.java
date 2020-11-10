@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Date;
 
 public class Screenshots {
     private final String delimiter = System.getProperty("os.name").toLowerCase().contains("windows") ? "\\" : "/";
@@ -28,7 +29,8 @@ public class Screenshots {
                     currentPath.toAbsolutePath().toString()
                             + delimiter + "screenshot"
                             + delimiter + testResult.getTestClass().getName().replace(".", delimiter)
-                            + delimiter + testResult.getMethod().getConstructorOrMethod().getName() + ".png"
+                            + delimiter + testResult.getMethod().getConstructorOrMethod().getName()
+                            + "-" + new Date().getTime() + ".png"
             ));
         } catch (IOException e) {
             e.printStackTrace();
