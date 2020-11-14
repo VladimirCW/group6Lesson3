@@ -24,7 +24,8 @@ public class PoTest2 extends TestBaseSetup {
 
     //@Test(retryAnalyzer = RetryAnalyzer.class)
     @Test
-    public void test1() {
+    public void test1(String name) {
+        System.out.println("THE NAME IS: ***** "  + name );
         homePage
                 .open()
                 .clickSellBtn()

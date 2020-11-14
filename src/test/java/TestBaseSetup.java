@@ -10,6 +10,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import test.java.utils.Screenshots;
 
 import java.net.MalformedURLException;
@@ -21,6 +22,7 @@ public class TestBaseSetup {
 
     @BeforeMethod
     public void initializeBrowser(ITestContext iTestContext) {
+        System.out.println("-------------------------------:::::" + System.getProperty("browser"));
         /*System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver(chromeOptions);*/
 
@@ -28,7 +30,7 @@ public class TestBaseSetup {
         FirefoxOptions ffOption = new FirefoxOptions();
         try {
             //driver = new RemoteWebDriver(new URL("http://ec2-18-223-162-200.us-east-2.compute.amazonaws.com:4444/wd/hub"), chromeOptions);
-            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), chromeOptions);
+            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), System.getProperty("browser").equals("chrome") ? chromeOptions : ffOption);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

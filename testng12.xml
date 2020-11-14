@@ -2,10 +2,12 @@
 <suite name="FirstSuite" parallel="methods" thread-count="10">
     <listeners>
         <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.DPAnnotationTransformer"/>
     </listeners>
     <test name="FirstTest">
+        <!--<parameter name="browser" value="firefox"/>-->
         <classes>
-            <class name="test.java.lesson9.PoTest"/>
+            <!--<class name="test.java.lesson9.PoTest"/>-->
             <class name="test.java.lesson9.PoTest2"/>
         </classes>
     </test>
