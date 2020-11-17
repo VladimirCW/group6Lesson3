@@ -1,6 +1,9 @@
 package test.java;
 
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.MutableCapabilities;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -46,6 +49,18 @@ public class TestBaseSetup {
 
     @AfterMethod
     public void finalizeBrowser() {
+        attachText();
+        attachScreen();
         driver.quit();
+    }
+
+    @Attachment
+    private String attachText() {
+        return "Text attachment";
+    }
+
+    @Attachment
+    private byte[] attachScreen() {
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 }

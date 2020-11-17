@@ -1,5 +1,6 @@
 package test.java.pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -30,6 +31,7 @@ public class GiftPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Gift page open")
     public GiftPage open() {
         logger.info("Open Gift page");
         driver.get(PropertyLoader.loadProperty("url") + "gift-cards/b/?ie=UTF8&node=2238192011&ref_=nav_cs_gc");
@@ -43,6 +45,7 @@ public class GiftPage extends BasePage{
         return this;
     }
 
+    @Step("Click price {price}")
     public GiftPage clickPrice(String price) {
         logger.info("Click price '" + price + "'");
         By priceBy = By.xpath("(//span[text() = '" + price + "'])[1]");
@@ -56,15 +59,22 @@ public class GiftPage extends BasePage{
         return this;
     }
 
+    @Step("Get cards list")
     public List<WebElement> getCartsList() {
         logger.info("Get list of carts");
         return cardsList;
     }
 
+
     public int getMaximumCartPrice(WebElement cart) {
         logger.debug("Get 'XXXX' cart maximum price");
         List<WebElement> pricesList = cart.findElements(By.className("a-price-whole"));
         String actualMaximumPriceAsString = pricesList.get(pricesList.size() - 1).getText().replace(",", "");
+        return this.parsePriceAsAString(actualMaximumPriceAsString);
+    }
+
+    @Step("Get maximum card price {actualMaximumPriceAsString}")
+    private int parsePriceAsAString(String actualMaximumPriceAsString) {
         return Integer.parseInt(actualMaximumPriceAsString);
     }
 }

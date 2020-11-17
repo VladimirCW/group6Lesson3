@@ -5,3 +5,4 @@ chromedriver.exe
 logs/
 screenshot/
 src/test/resources/cred.properties
+allure-results/

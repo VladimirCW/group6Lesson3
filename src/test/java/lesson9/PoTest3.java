@@ -1,24 +1,20 @@
 package test.java.lesson9;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Stories;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
 import test.java.pages.GiftPage;
 import test.java.pages.HomePage;
-import test.java.utils.RetryAnalyzer;
 
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
-@Epic("Epic 2")
-@Feature("Feature second")
-public class PoTest2 extends TestBaseSetup {
+@Epic("Epic 1")
+@Feature("Feature third")
+public class PoTest3 extends TestBaseSetup {
     HomePage homePage;
     GiftPage giftPage;
 
@@ -30,9 +26,23 @@ public class PoTest2 extends TestBaseSetup {
 
     //@Test(retryAnalyzer = RetryAnalyzer.class)
     @Stories({
-            @Story("AAA-4"),
-            @Story("AAA-5")
+            @Story("AAA-6"),
+            @Story("AAA-7")
     })
+    @Links({
+            @Link("https://google.com"),
+            @Link("https://google.com")
+    })
+    @TmsLinks({
+            @TmsLink("BBB-1"),
+            @TmsLink("BBB-2")
+    })
+    @Issues({
+            @Issue("JIRA-1"),
+            @Issue("JIRA-2")
+    })
+    @Description("Some detailed description")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void test1() {
         homePage

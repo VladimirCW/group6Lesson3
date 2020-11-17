@@ -8,6 +8,7 @@
         <classes>
             <class name="test.java.lesson9.PoTest"/>
             <class name="test.java.lesson9.PoTest2"/>
+            <class name="test.java.lesson9.PoTest3"/>
         </classes>
     </test>
 </suite>

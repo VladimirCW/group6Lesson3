@@ -14,7 +14,8 @@
         <suiteXmlFile>testng6.xml</suiteXmlFile>
         <browser>chrome</browser>
         <dp>empty</dp>
-        <threadCount>2</threadCount>
+        <threadCount>3</threadCount>
+        <aspectj.version>1.9.6</aspectj.version>
     </properties>
 
     <build>
@@ -38,6 +39,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <dp>${dp}</dp>
@@ -47,6 +51,13 @@
                     </suiteXmlFiles>
                     <threadCount>${threadCount}</threadCount>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
@@ -73,6 +84,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.13.5</version>
         </dependency>
 
     </dependencies>

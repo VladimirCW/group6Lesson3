@@ -1,5 +1,6 @@
 package test.java.pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -29,6 +30,7 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Home page open")
     public HomePage open() {
         logger.info("Open home page");
         logger.warn("WARNING !!!!!");
@@ -54,6 +56,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
+    @Step("Click 'Sell' button")
     public HomePage clickSellBtn() {
         logger.info("Click 'Sell' button");
         sellBtn.click();
@@ -61,6 +64,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
+    @Step("Click 'Registry' button")
     public HomePage clickRegistryBtn() {
         logger.info("Click 'Registry' button");
         registryBtn.click();
@@ -68,6 +72,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
+    @Step("Click 'Gift cards' button")
     public HomePage clickGiftCardsBtn() {
         logger.info("Click 'Gift cards' button");
         giftCardsBtn.click();

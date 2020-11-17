@@ -38,10 +38,10 @@ public class Listener implements ISuiteListener, ITestListener, IInvokedMethodLi
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("TEST WAS FAILED");
+        /*System.out.println("TEST WAS FAILED");
         driver = (WebDriver) (iTestResult.getTestContext().getAttribute("driver"));
         Screenshots screenshots = new Screenshots(driver);
-        screenshots.makeScreenshot(iTestResult);
+        screenshots.makeScreenshot(iTestResult);*/
     }
 
     @Override
