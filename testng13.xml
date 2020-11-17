@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="FirstSuite" parallel="classes" thread-count="10">
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.DPAnnotationTransformer"/>
+    </listeners>
+    <test name="FirstTest">
+        <classes>
+            <class name="test.java.lesson9.PoTest"/>
+            <class name="test.java.lesson9.PoTest2"/>
+        </classes>
+    </test>
+</suite>

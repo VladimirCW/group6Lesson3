@@ -12,6 +12,9 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <suiteXmlFile>testng6.xml</suiteXmlFile>
+        <browser>chrome</browser>
+        <dp>empty</dp>
+        <threadCount>2</threadCount>
     </properties>
 
     <build>
@@ -35,9 +38,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
+                    <systemPropertyVariables>
+                        <browser>${browser}</browser>
+                        <dp>${dp}</dp>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <threadCount>${threadCount}</threadCount>
                 </configuration>
             </plugin>
         </plugins>

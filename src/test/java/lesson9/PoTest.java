@@ -27,6 +27,7 @@ public class PoTest extends TestBaseSetup {
 
     @Test
     public void test1() {
+        //((JavascriptExecutor) driver).executeScript("document.getElementById('twotabsearchtextbox').value = 'GOOD BY'")
         homePage
                 .open()
                 .clickSellBtn()
@@ -46,4 +47,27 @@ public class PoTest extends TestBaseSetup {
             );
         }
     }
+
+    /*@Test
+    public void test2(String name) {
+        System.out.println("TEST PARAMETRIZED WITH: " + name);
+        homePage
+                .open()
+                .clickSellBtn()
+                .clickRegistryBtn()
+                .clickSellBtn()
+                .clickGiftCardsBtn();
+        List<WebElement> cartsList =
+                giftPage
+                        .clickPrice("$200 & Above")
+                        .getCartsList();
+
+        for (WebElement cart: cartsList) {
+            int actualMaximumPrice = giftPage.getMaximumCartPrice(cart);
+            assertTrue(
+                    actualMaximumPrice >= 200,
+                    String.format("Expected price %d to be more than 200", actualMaximumPrice)
+            );
+        }
+    }*/
 }
