@@ -5,6 +5,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 git 'https://github.com/VladimirCW/group6Lesson3.git'
+                bat 'git checkout jenkins'
             }
         }
         stage('Unit tests') {
