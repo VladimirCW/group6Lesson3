@@ -86,8 +86,8 @@ public class PoTest extends TestBaseSetup {
         }
     }
 
-    /*@Test
-    public void test2(String name) {
+    @Test
+    public void parametrizedTest(String name) {
         System.out.println("TEST PARAMETRIZED WITH: " + name);
         homePage
                 .open()
@@ -107,5 +107,5 @@ public class PoTest extends TestBaseSetup {
                     String.format("Expected price %d to be more than 200", actualMaximumPrice)
             );
         }
-    }*/
+    }
 }
