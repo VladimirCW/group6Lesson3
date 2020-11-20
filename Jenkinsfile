@@ -4,7 +4,7 @@ pipeline {
     parameters {
         choice(name: 'browser', choices: ['chrome', 'firefox'], description: 'Pick browser')
         choice(name: 'threads', choices: ['1', '2', '3'], description: 'Pick threads amount')
-        choice(name: 'dp', choices: ['smoke', 'regression'], description: 'Pick data provider')
+        //choice(name: 'dp', choices: ['smoke', 'regression'], description: 'Pick data provider')
     }
 
     stages{
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('UI tests') {
             steps{
-                bat 'mvn clean -DsuiteXmlFile=testng13.xml -Dbrowser=%browser% -DthreadCount=%threads% -Ddp=%dp% test'
+                bat 'mvn clean -DsuiteXmlFile=testng13.xml -Dbrowser=%browser% -DthreadCount=%threads% test'
             }
         }
     }
