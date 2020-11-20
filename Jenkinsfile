@@ -26,7 +26,7 @@ pipeline {
         }
         stage('UI tests') {
             steps{
-                bat 'mvn clean -DsuiteXmlFile=testng13.xml test'
+                bat 'mvn clean -DsuiteXmlFile=testng13.xml -Dbrowser=%params.browser% test'
             }
         }
     }
