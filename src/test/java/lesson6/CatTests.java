@@ -20,7 +20,7 @@ public class CatTests {
         cat.setAge(Integer.parseInt(ageToSet));
         int actualAge = cat.getAge();
         //Assert
-        assertEquals(actualAge, expectedAge, String.format("Expected age to be %d, but actual was %d", Integer.parseInt(expectedAge), actualAge));
+        assertEquals(actualAge, Integer.parseInt(expectedAge), String.format("Expected age to be %d, but actual was %d", Integer.parseInt(expectedAge), actualAge));
 //        assertTrue(actualAge == 1000,
 //                String.format("Expected age to be %d, but actual was %d", 1000, actualAge));
     }
