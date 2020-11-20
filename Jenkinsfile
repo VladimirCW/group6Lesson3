@@ -2,15 +2,9 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-
-        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
-
-        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
-
-        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-
-        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+        choice(name: 'browser', choices: ['chrome', 'firefox'], description: 'Pick browser')
+        choice(name: 'threads', choices: ['1', '2', '3'], description: 'Pick threads amount')
+        choice(name: 'dp', choices: ['smoke', 'regression'], description: 'Pick data provider')
     }
 
     stages{
