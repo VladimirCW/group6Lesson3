@@ -23,6 +23,11 @@ pipeline {
                 echo 'Deployed'
             }
         }
+        stage('API tests') {
+            steps {
+                bat 'mvn clean -DsuiteXmlFile=api_testng.xml test'
+            }
+        }
         stage('UI tests') {
             steps {
                 bat 'mvn clean -DsuiteXmlFile=ui_testng.xml -Dbrowser=%browser% -DthreadCount=%threads% test'

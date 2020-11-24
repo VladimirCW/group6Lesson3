@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Get project by ID",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "color": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "comment_count": {
+      "type": "number",
+      "minimum": 0
+    },
+    "shared": {
+      "type": "boolean"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "sync_id": {
+      "type": "number"
+    },
+    "inbox_project": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "color",
+    "name",
+    "comment_count",
+    "shared",
+    "favorite",
+    "sync_id",
+    "inbox_project"
+  ]
+}
